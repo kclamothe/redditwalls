@@ -6,14 +6,10 @@
     </head>
     <body>
         <?php require_once "header.php"; ?>
-        <div id="spacer"></div>
         <div id="content">
             <?php require_once "testimages.php"; ?>
         </div>
-        <div id="navigation">
-            <a href="#" class="navbutton">< Previous</a>
-            <a href="#" class="navbutton">Next ></a>  
-        </div>
-        <div id="footer">©2018 K. Casey LaMothe</div>
+        <?php require_once "navigation.php"; ?>
+        <?php require_once "footer.php"; ?>
     </body>
 </html>

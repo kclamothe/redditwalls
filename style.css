@@ -125,13 +125,11 @@ body {
 }
 
 #navigation a:hover {
-    background-color: #ddd;
     color: rgb(28, 119, 255);
 }
 
 .navbutton {
-    background-color: #eeeeee;
-    color: rgb(20, 20, 20);
+    color: #eeeeee;
 }
 
 #footer{
@@ -140,4 +138,8 @@ body {
     background-color: rgb(20, 20, 20);
     color: #eeeeee;
     padding: 16px 16px;
+}
+
+#current_page{
+    color: rgb(28, 119, 255);
 }

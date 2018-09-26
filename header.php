@@ -7,3 +7,4 @@
         </ul>
     </nav>
 </header>
+<div id="spacer"></div>
