@@ -125,7 +125,7 @@ body {
 }
 
 #navigation a:hover {
-    color: rgb(28, 119, 255);
+    color: #1c77ff;
 }
 
 .navbutton {
@@ -141,5 +141,5 @@ body {
 }
 
 #current_page{
-    color: rgb(28, 119, 255);
+    color: #1c77ff;
 }
