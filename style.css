@@ -67,10 +67,30 @@ body {
     background: rgba(20,20,20,.6);
 }
 
+.info:hover{ 
+    background: rgba(20,20,20,.95);
+}
+
 .title{
     font-size: 14px;
     padding: 0 6 0 6;
-    color: #fff;
+    color: #eee
+}
+
+.title a{ 
+    text-decoration: none;
+    color: #eee
+}
+
+.title a:hover{
+    /* text-decoration: none; */
+    color: #1c77ff
+}
+
+.info:hover{ 
+    background: rgba(20,20,20,.9);
+    text-decoration: none;
+    color: #1c77ff
 }
 
 #content {
@@ -81,11 +101,11 @@ body {
     padding: 0 4px;
 }
 
-/* Creates four columns of images */
+/* Creates two columns of images */
 .image_column {
-    -ms-flex: 25%; /* IE10 */
-    flex: 25%;
-    max-width: 25%;
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+    max-width: 50%;
     padding: 0 4px;
 }
 
@@ -96,13 +116,13 @@ body {
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .image_column {
         -ms-flex: 50%;
         flex: 50%;
         max-width: 50%;
     }
-}
+} */
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {

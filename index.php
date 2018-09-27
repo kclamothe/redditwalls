@@ -7,7 +7,10 @@
     <body>
         <?php require_once "header.php"; ?>
         <div id="content">
-            <?php require_once "testimages.php"; ?>
+            <?php require_once "testimages.php"; 
+            //final site's images will link to full image and 
+            //the title will link to reddit source
+            ?>
         </div>
         <?php require_once "navigation.php"; ?>
         <?php require_once "footer.php"; ?>
