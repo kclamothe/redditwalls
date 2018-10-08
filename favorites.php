@@ -6,7 +6,7 @@
     </head>
     <body>
         <header id="navbar">
-            <div class="logo"><a href="index.php"><img src="images/logo.png"></a></div>
+            <div class="logo"><a href="."><img src="images/logo.png"></a></div>
             <nav class="menu">
                 <ul>
                     <li><a id="current_page" href="favorites.php">Favorites</a></li>

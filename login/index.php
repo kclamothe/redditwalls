@@ -9,7 +9,7 @@
     <div class="modal_dialog">
         <div class="loginmodal_container">
             <h1>Login</h1><br>
-            <form action="index.php">
+            <form action="..">
             <input type="text" name="user" placeholder="Username">
             <input type="password" name="pass" placeholder="Password">
             <input type="submit" name="login" class="loginmodal_submit" value="Login">
