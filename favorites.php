@@ -10,7 +10,7 @@
             <nav class="menu">
                 <ul>
                     <li><a id="current_page" href="favorites.php">Favorites</a></li>
-                    <li><a href="login.php">Login/Register</a></li>
+                    <li><a href="login">Login/Register</a></li>
                 </ul>
             </nav>
         </header>
