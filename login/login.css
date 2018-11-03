@@ -12,7 +12,7 @@
     font-family: sans-serif;
 }
 
-.loginmodal_container h1 {
+.loginmodal_container h2 {
     color: #eee;
     text-align: center;
     font-family: sans-serif;
@@ -101,6 +101,17 @@
 
 .loginmodal_submit{
     -webkit-appearance: none;
+}
+
+.logo{
+    z-index: 1000;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.logo img{
+    display: block;
+    margin: 0 auto;
 }
 
 /* .button {

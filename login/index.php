@@ -8,7 +8,7 @@
 <div class="modal_fade" id="login_modal">
     <div class="modal_dialog">
         <div class="loginmodal_container">
-            <h1>Login</h1><br>
+            <div class="logo"><img src="../images/loginlogo.png"></div>
             <form action="..">
             <input type="text" name="user" placeholder="Username">
             <input type="password" name="pass" placeholder="Password">
