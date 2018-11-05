@@ -11,10 +11,6 @@
     if ($dao->moreWallpapers($page)){
         echo '<a href="?page='. ($page + 1) .'" class="navbutton">Next ></a>';
     }
-
-    // <? if ($page != $maxPages) 
-    // <a href="?page= $page + 1 ">Next</a>
-    // endif
     ?>
 
 </div>

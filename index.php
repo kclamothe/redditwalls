@@ -18,12 +18,22 @@
     <body>
         <?php require_once "header.php"; ?>
         <div id="content">
-            <?php require_once "wallpapers.php"; 
-            //final site's images will link to full image and 
-            //the title will link to reddit source
+            <?php require_once "wallpapers.php";
             ?>
         </div>
-        <?php require_once "navigation.php"; ?>
+
+        <?php //require_once "navigation.php"; ?>
+        <div id="navigation">
+            <?php 
+            if ($page > 1) {
+                echo '<a href="?page='. ($page - 1) .'" class="navbutton">< Previous</a>';
+            } 
+            if ($dao->moreWallpapers($page)){
+                echo '<a href="?page='. ($page + 1) .'" class="navbutton">Next ></a>';
+            }
+            ?>
+        </div>
+
         <?php require_once "footer.php"; ?>
     </body>
 </html>

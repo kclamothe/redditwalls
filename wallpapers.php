@@ -13,10 +13,10 @@
         if ($rowCount%2==0){
             echo "
                 <div class=\"container\">
-                    <a href=\"" . $wallpaper['image_link'] . "\"><img src=\"" . $wallpaper['image_link'] . "\"></a>
+                    <a href=\"" . $wallpaper['image_link'] . "\" target=\"_blank\"><img src=\"" . $wallpaper['image_link'] . "\"></a>
                     <div class=\"info\">
                         <div class=\"title\">
-                            <a href=\"". $wallpaper['reddit_link'] ."\">". $wallpaper['title'] ."</a>
+                            <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". $wallpaper['title'] ."</a>
                             <div class=\"fav\">
                                 Save
                             </div>
@@ -39,10 +39,10 @@
         if ($rowCount%2==1){
             echo "
                 <div class=\"container\">
-                    <a href=\"" . $wallpaper['image_link'] . "\"><img src=\"" . $wallpaper['image_link'] . "\"></a>
+                    <a href=\"" . $wallpaper['image_link'] . "\" target=\"_blank\"><img src=\"" . $wallpaper['image_link'] . "\"></a>
                     <div class=\"info\">
                         <div class=\"title\">
-                            <a href=\"". $wallpaper['reddit_link'] ."\">". $wallpaper['title'] ."</a>
+                            <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". $wallpaper['title'] ."</a>
                             <div class=\"fav\">
                                 Save
                             </div>

@@ -5,6 +5,7 @@
 
     if ($username == 'kclamothe' && $password == '123456') {
         $_SESSION['logged_in'] = true;
+        $_SESSION['user'] = $username;
         header('Location: ..');
         exit;
     }
