@@ -1,1 +1,3 @@
-<div id="footer">©2018 K. Casey LaMothe</div>
+<div id="footer">
+    ©2018 K. Casey LaMothe
+</div>

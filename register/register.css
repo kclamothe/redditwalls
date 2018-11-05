@@ -1,4 +1,4 @@
-/* TODO: make into a modal so that it doesn't open a new page to login */
+/* TODO: make into a modal so that it doesn't open a new page to register */
 
 * {
     font-family: 'Source Sans Pro', sans-serif;
@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-.loginmodal_container {
+.registermodal_container {
     padding: 30px;
     max-width: 350px;
     width: 100% !important;
@@ -20,14 +20,19 @@ body {
     overflow: hidden;
 }
 
-.loginmodal_container input[type=submit] {
+.registermodal_container h2 {
+    color: #eee;
+    text-align: center;
+}
+
+.registermodal_container input[type=submit] {
     width: 100%;
     display: block;
     margin-bottom: 10px;
     position: relative;
 }
 
-.loginmodal_container input[type=text], input[type=password] {
+.registermodal_container input[type=text], input[type=password] {
     height: 44px;
     font-size: 16px;
     width: 100%;
@@ -42,7 +47,7 @@ body {
     -moz-box-sizing: border-box;
 }
 
-.loginmodal_container input[type=text]:hover, input[type=password]:hover {
+.registermodal_container input[type=text]:hover, input[type=password]:hover {
     border: 1px solid #b9b9b9;
     border-top: 1px solid #a0a0a0;
     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -50,7 +55,7 @@ body {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.loginmodal {
+.registermodal {
     text-align: center;
     font-size: 14px;
     font-weight: 700;
@@ -61,23 +66,15 @@ body {
   user-select: none; */
 }
 
-.loginmodal_submit {
+.registermodal_submit {
     /* border: 1px solid #3079ed; */
     border: 0px;
     color: #fff;
     text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-    background-color: #1975ff;
+    background-color: #1c77ff;
     padding: 10px 0px;
     font-size: 18px;
     /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
-}
-
-.loginmodal_submit:hover {
-    /* border: 1px solid #2f5bb7; */
-    border: 0px;
-    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    background-color: #3d8bff;
-    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
 #cancel{
@@ -88,27 +85,28 @@ body {
     background-color: #fd352e;
 }
 
+.registermodal_submit:hover {
+    /* border: 1px solid #2f5bb7; */
+    border: 0px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #3d8bff;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
 .loginmodal_container a {
-    color:#ddd;
+    text-decoration: none;
+    color:#1975ff;
     font-weight: 400;
     text-align: center;
     display: inline-block;
 }
-.loginmodal_container a:hover {
-    color:#1975ff;
-}
 
-.login_help {
-    color: #ddd;
-    font-size: 14px;
-}
-
-.login_btn {
+.register_btn {
     text-align: center;
     margin-top: 50px;
 }
 
-.loginmodal_submit{
+.registermodal_submit{
     -webkit-appearance: none;
 }
 

@@ -1,18 +1,24 @@
-CREATE TABLE user (
+use heroku_a9d8c3a5ddb125b;
+
+CREATE TABLE IF NOT EXISTS user (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(256) NOT NULL,
     username VARCHAR(20) NOT NULL,
     password VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE wallpaper (
+CREATE TABLE IF NOT EXISTS wallpaper (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    reddit_link VARCHAR(MAX) NOT NULL,
-    image_link VARCHAR(MAX) NOT NULL
+    title VARCHAR(300) CHARACTER SET utf8mb4 NOT NULL,
+    reddit_link VARCHAR(2083) NOT NULL,
+    image_link VARCHAR(2083) NOT NULL,
+    date DATETIME NOT NULL
 );
 
-CREATE TABLE favorites
+CREATE TABLE IF NOT EXISTS favorites
 (
-    user_id INTEGER FOREIGN KEY references user(id),
-    item_id INTEGER FOREIGN KEY references wallpaper(id)
+	user_id INTEGER,
+    wallpaper_id INTEGER,
+    FOREIGN KEY (user_id) references user(id),
+    FOREIGN KEY (wallpaper_id) references wallpaper(id)
 )
