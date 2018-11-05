@@ -1,10 +1,11 @@
 <?php
     session_start();
     $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-    $_SESSION['page'] = $page;
-    $logged_in = $_GET['logged_in'];
+    //$_SESSION['page'] = $page;
+    $logged_in = $_SESSION['logged_in'];
     //debug
     echo '<script>console.log("page number: '.$page.'")</script>';
+    echo '<script>console.log("logged in: '.$logged_in.'")</script>';
 
 ?>
 <html>

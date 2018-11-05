@@ -17,6 +17,9 @@
                     <div class=\"info\">
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\">". $wallpaper['title'] ."</a>
+                            <div class=\"fav\">
+                                Save
+                            </div>
                         </div>
                     </div>
                 </div>";
@@ -40,6 +43,9 @@
                     <div class=\"info\">
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\">". $wallpaper['title'] ."</a>
+                            <div class=\"fav\">
+                                Save
+                            </div>
                         </div>
                     </div>
                 </div>";

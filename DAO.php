@@ -23,7 +23,7 @@ class Dao {
         $conn = $this->getConnection();
         $start = ($page+1)*10 - 10;
         $result = $conn->query("select id, date from wallpaper order by date desc limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
-        echo '<script>console.log("morewp result: '.$result->fetchColumn().'")</script>';
+        // echo '<script>console.log("morewp result: '.$result->fetchColumn().'")</script>';
         if($result->fetchColumn() > 0){
             return true;
         }

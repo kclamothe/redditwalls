@@ -4,8 +4,10 @@
 ?>
 <html>
     <head>
+        <title>reddit walls - register</title>
         <link href="register.css" type="text/css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link href="../images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
     </head>
 <?php
 //TODO: make into a modal instead of a new page
