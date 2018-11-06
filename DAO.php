@@ -13,6 +13,34 @@ class Dao {
         return $conn;
     }
 
+    //Checks if username and password form a valid login
+    public function isValidLogin($user, $pass){
+        $conn = $this->getConnection();
+        $saveQuery = "SELECT username, password FROM user WHERE username=:username";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":username", $user);
+        $q->execute();
+        $result = $q->fetch();
+        if($result["username"] === $user && $result["password"] === $pass){
+            return true;
+        }
+        return false;
+    }
+
+    //Checks if the username is a current user
+    public function isUser ($username){
+        $conn = $this->getConnection();
+        $saveQuery = "SELECT username FROM user WHERE username=:username";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":username", $username);
+        $q->execute();
+        $count = $q->rowCount();
+        if($count > 0){
+            return true;
+        }
+        return false;
+    }
+
     //Gets wallpapers
     public function getWallpapers ($page) {
         $conn = $this->getConnection();
@@ -26,7 +54,8 @@ class Dao {
         return $conn->query("select wallpaper.id, wallpaper.title, wallpaper.reddit_link, wallpaper.image_link, user.id, favorites.user_id, favorites.wallpaper_id 
             from wallpaper 
             join favorites on wallpaper.id = favorites.wallpaper_id
-            join user on user.id = favorites.user_id limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
+            join user on user.id = favorites.user_id 
+            where user.username = '".$user."' limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
     }
 
     //Checks if there are more wallpapers to load
@@ -50,7 +79,23 @@ class Dao {
             from wallpaper 
             join favorites on wallpaper.id = favorites.wallpaper_id
             join user on user.id = favorites.user_id
-            limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
+            where user.username = '".$user."' limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
+        // echo '<script>console.log("morefave result: '.$result->fetchColumn().'")</script>';
+        if($result->fetchColumn() > 0){
+            return true;
+        }
+        return false;
+    
+    }
+
+    //Checks if a wallpaper is a favorite of a user
+    public function isFavorite ($wall, $user) {
+        $conn = $this->getConnection();
+        $result = $conn->query("select wallpaper.id, user.id, favorites.user_id, favorites.wallpaper_id 
+            from wallpaper 
+            join favorites on wallpaper.id = favorites.wallpaper_id
+            join user on user.id = favorites.user_id
+            where user.username = '".$user."' and favorites.wallpaper_id = ".$wall, PDO::FETCH_ASSOC);
         // echo '<script>console.log("morefave result: '.$result->fetchColumn().'")</script>';
         if($result->fetchColumn() > 0){
             return true;

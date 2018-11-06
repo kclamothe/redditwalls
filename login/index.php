@@ -19,7 +19,7 @@
             <div class="logo"><img src="../images/loginlogo.png"></div>
 
             <?php if(!empty($message)) { ?>
-                <div class="message"><?php echo $message; ?></div>
+                <div id="message"><?php echo $message; ?></div>
             <?php } ?>
 
             <form method="post" action="loginhandler.php">
