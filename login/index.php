@@ -23,11 +23,10 @@
             <?php } ?>
 
             <form method="post" action="loginhandler.php">
-            <input type="text" id="username" name="username" placeholder="Username">
-            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="text" id="username" name="username" placeholder="Username" maxlength="20" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>">
+            <input type="password" id="password" name="password" placeholder="Password" maxlength="64">
             <input type="submit" name="login" class="loginmodal_submit" value="Login">
             <a href=".." class="loginmodal_submit" id="cancel">Cancel</a>
-            <!-- <button name="cancel" class="loginmodal_submit" id="cancel" value="Cancel"> -->
             </form>
             
             <div class="login_help">

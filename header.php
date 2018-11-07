@@ -8,9 +8,9 @@
             <?php
             if($logged_in){
                 echo '<li><a href="favorites.php">Favorites</a></li>';
-                echo '<li><a href="login/logout.php">Logout</a></li>';
+                echo '<li><a href="login/logout.php">Log out</a></li>';
             }else{
-                echo '<li><a href="login">Login/Register</a></li>';
+                echo '<li><a href="login">Log in/Register</a></li>';
             }
             ?>
         </ul>
