@@ -80,12 +80,18 @@ class Dao {
     public function getFavorites ($page, $user) {
         $conn = $this->getConnection();
         $first = $page*10 - 10;
+        // $saveQuery = 
+        //     "SELECT wallpaper.id, wallpaper.title, wallpaper.reddit_link, wallpaper.image_link, user.id, favorites.user_id, favorites.wallpaper_id
+        //      FROM wallpaper 
+        //      JOIN favorites on wallpaper.id = favorites.wallpaper_id
+        //      JOIN user on user.id = favorites.user_id 
+        //      WHERE user.username = :user
+        //      LIMIT ".$first.",".$this->limit;
         $saveQuery = 
-            "SELECT wallpaper.id, wallpaper.title, wallpaper.reddit_link, wallpaper.image_link, user.id, favorites.user_id, favorites.wallpaper_id
+            "SELECT wallpaper.id, wallpaper.title, wallpaper.reddit_link, wallpaper.image_link, favorites.user_id, favorites.wallpaper_id
              FROM wallpaper 
              JOIN favorites on wallpaper.id = favorites.wallpaper_id
-             JOIN user on user.id = favorites.user_id 
-             WHERE user.username = :user
+             WHERE favorites.user_id = :user
              LIMIT ".$first.",".$this->limit;
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user", $user);
@@ -98,9 +104,13 @@ class Dao {
     public function moreWallpapers ($page) {
         $conn = $this->getConnection();
         $start = ($page+1)*10 - 10;
-        $result = $conn->query("select id, date from wallpaper order by date desc limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
-        // echo '<script>console.log("morewp result: '.$result->fetchColumn().'")</script>';
-        if($result->fetchColumn() > 0){
+        //$result = $conn->query("select id, date from wallpaper order by date desc limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
+        $saveQuery = "SELECT id, date FROM wallpaper ORDER BY date desc LIMIT ".$start.",".$this->limit;
+        //$result = $q->fetchAll(PDO::FETCH_ASSOC);
+        $q = $conn->prepare($saveQuery);
+        $q->execute();
+        $count = $q->rowCount();
+        if($count > 0){
             return true;
         }
         return false;
@@ -108,15 +118,30 @@ class Dao {
 
     //Checks if there are more favorites
     public function moreFavorites ($page, $user) {
+        // $conn = $this->getConnection();
+        // $start = ($page+1)*10 - 10;
+        // $result = $conn->query("select wallpaper.id, user.id, favorites.user_id, favorites.wallpaper_id 
+        //     from wallpaper 
+        //     join favorites on wallpaper.id = favorites.wallpaper_id
+        //     join user on user.id = favorites.user_id
+        //     where user.username = '".$user."' limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
+        // // echo '<script>console.log("morefave result: '.$result->fetchColumn().'")</script>';
+        // if($result->fetchColumn() > 0){
+        //     return true;
+        // }
+        // return false;
         $conn = $this->getConnection();
-        $start = ($page+1)*10 - 10;
-        $result = $conn->query("select wallpaper.id, user.id, favorites.user_id, favorites.wallpaper_id 
-            from wallpaper 
-            join favorites on wallpaper.id = favorites.wallpaper_id
-            join user on user.id = favorites.user_id
-            where user.username = '".$user."' limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
-        // echo '<script>console.log("morefave result: '.$result->fetchColumn().'")</script>';
-        if($result->fetchColumn() > 0){
+        $first = ($page+1)*10 - 10;
+        $saveQuery = 
+            "SELECT favorites.wallpaper_id, favorites.user_id
+            FROM favorites
+            WHERE favorites.user_id = :user
+            LIMIT ".$first.",".$this->limit;
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":user", $user);
+        $q->execute();
+        $count = $q->rowCount();
+        if($count > 0){
             return true;
         }
         return false;

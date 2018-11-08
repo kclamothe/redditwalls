@@ -108,7 +108,8 @@ body {
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-    padding: 0 4px;
+    padding: 0px 4px;
+    margin-bottom: 8px;
 }
 
 /* Creates two columns of images */

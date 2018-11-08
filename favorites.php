@@ -5,7 +5,8 @@
         exit;
     }
     $logged_in = $_SESSION['logged_in'];
-    $user = $_SESSION['user'];
+    //$user = $_SESSION['user'];
+    $user = $_SESSION['user_id'];
     $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 
     //debug
