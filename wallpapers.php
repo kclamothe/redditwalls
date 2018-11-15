@@ -15,7 +15,7 @@
                     <a href=\"" . $wallpaper['image_link'] . "\" target=\"_blank\"><img src=\"" . $wallpaper['image_link'] . "\"></a>
                     <div class=\"info\">
                         <div class=\"title\">
-                            <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". $wallpaper['title'] ."</a>
+                            <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
                                 echo"<a href='favoritehandler.php?wallpaper=".$wallpaper['id']."'/>Favorite</a>
                             </div>
@@ -40,7 +40,7 @@
                     <a href=\"" . $wallpaper['image_link'] . "\" target=\"_blank\"><img src=\"" . $wallpaper['image_link'] . "\"></a>
                     <div class=\"info\">
                         <div class=\"title\">
-                            <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". $wallpaper['title'] ."</a>
+                            <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
                                 echo"<a href='favoritehandler.php?wallpaper=".$wallpaper['id']."'/>Favorite</a>
                             </div>
