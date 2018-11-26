@@ -18,9 +18,13 @@
         <div class="registermodal_container">
             <div class="logo"><img src="../images/registerlogo.png"></div>
 
-            <?php if(!empty($message)) { ?>
-                <div id="message"><?php echo $message; ?></div>
-            <?php } ?>
+            <?php 
+            if(!empty($message)) {
+                foreach($message as $m) {
+                    echo '<div id="message">'.$m.'</div>';
+                }
+            }
+            ?>
 
             <form method="post" action="registerhandler.php">
             <input type="text" name="username" placeholder="Username" maxlength="20" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>">

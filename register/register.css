@@ -136,9 +136,6 @@ body {
 }
 
 #message{
-    /* background-color: #fd352e; */
-    padding: 8px 0px;
-    margin: 8px 0px;
+    margin-bottom: 8px;
     color: #fd352e;
-    /* color: #fff; */
 }

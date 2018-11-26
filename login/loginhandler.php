@@ -7,8 +7,6 @@
 
     $_SESSION['presets']['username'] = $username;
 
-    //echo '<script>console.log("valid user: '.$dao->isValidLogin($username, $password).'")</script>';
-
     if ($dao->isValidLogin($username, $password)){
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $username;
