@@ -10,12 +10,10 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
         <link href="../images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
     </head>
-<?php
-//TODO: make into a modal instead of a new page
-?>
-<div class="modal_fade" id="register_modal">
-    <div class="modal_dialog">
-        <div class="registermodal_container">
+
+<div id="register">
+    <div class="dialog">
+        <div class="register_container">
             <div class="logo"><img src="../images/registerlogo.png"></div>
 
             <?php 
@@ -31,8 +29,8 @@
             <input type="text" name="email" placeholder="Email" maxlength="256" value="<?php echo isset($_SESSION['presets']['email']) ? $_SESSION['presets']['email'] : ''; ?>">
             <input type="password" name="password" placeholder="Password" maxlength="64">
             <input type="password" name="passwordconfirm" placeholder="Confirm Password" maxlength="64">
-            <input type="submit" name="register" class="registermodal_submit" value="Register">
-            <a href=".." class="registermodal_submit" id="cancel">Cancel</a>
+            <input type="submit" name="register" class="register_submit" value="Register">
+            <a href=".." class="register_submit" id="cancel">Cancel</a>
             </form>
 
             <div class="register_help">

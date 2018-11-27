@@ -10,12 +10,10 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
         <link href="../images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
     </head>
-<?php
-//TODO: make into a modal instead of a new page
-?>
-<div class="modal_fade" id="login_modal">
-    <div class="modal_dialog">
-        <div class="loginmodal_container">
+
+<div id="login">
+    <div class="dialog">
+        <div class="login_container">
             <div class="logo"><img src="../images/loginlogo.png"></div>
 
             <?php if(!empty($message)) { ?>
@@ -25,8 +23,8 @@
             <form method="post" action="loginhandler.php">
             <input type="text" id="username" name="username" placeholder="Username" maxlength="20" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>">
             <input type="password" id="password" name="password" placeholder="Password" maxlength="64">
-            <input type="submit" name="login" class="loginmodal_submit" value="Login">
-            <a href=".." class="loginmodal_submit" id="cancel">Cancel</a>
+            <input type="submit" name="login" class="login_submit" value="Login">
+            <a href=".." class="login_submit" id="cancel">Cancel</a>
             </form>
             
             <div class="login_help">
