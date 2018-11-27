@@ -3,7 +3,6 @@
     require_once 'DAO.php';
     $dao = new DAO();
 ?>
-
 <div class="image_column">
 
     <?php
@@ -17,7 +16,7 @@
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
-                                echo"<a href='favoritehandler.php?wallpaper=".$wallpaper['id']."'/>Favorite</a>
+                                echo"<a class=\"favbutton\" href='favoritehandler.php?wallpaper=".$wallpaper['id']."'/>Favorite</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +41,7 @@
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
-                                echo"<a href='favoritehandler.php?wallpaper=".$wallpaper['id']."'/>Favorite</a>
+                                echo"<a class=\"favbutton\" href='favoritehandler.php?wallpaper=".$wallpaper['id']."'/>Favorite</a>
                             </div>
                         </div>
                     </div>

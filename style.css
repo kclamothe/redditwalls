@@ -91,11 +91,19 @@ body {
 }
 
 .fav{
-    color: #eee;
     float:right;
 }
 
-.fav a:hover{
+a.favbutton {
+    color: #eee;
+}
+
+a.favbutton:hover{
+    color: #ffdd1c;
+}
+
+.favorited {
+    /* float:right; */
     color: #ffdd1c;
 }
 

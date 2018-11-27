@@ -10,9 +10,8 @@
     $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 
     //debug
-    echo '<script>console.log("page number: '.$page.'")</script>';
-    echo '<script>console.log("logged in: '.$logged_in.'")</script>';
-    echo '<script>console.log("user: '.$user.'")</script>';
+    //echo '<script>console.log("page number: '.$page.'")</script>';
+    //echo '<script>console.log("logged in: '.$logged_in.'")</script>';
 ?>
 <html>
     <head>
@@ -20,6 +19,8 @@
         <link href="style.css" type="text/css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
         <link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="javascript/favorites.js"></script>
     </head>
     <body>
         <header id="navbar">

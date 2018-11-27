@@ -17,7 +17,7 @@
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
-                                echo"<a href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unfavorite</a>
+                                echo"<a class=\"favbutton\" href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unfavorite</a>
                             </div>
                         </div>
                     </div>
@@ -42,18 +42,11 @@
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
-                                echo"<a href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unfavorite</a>
+                                echo"<a class=\"favbutton\" href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unfavorite</a>
                             </div>
                         </div>
                     </div>
-                </div>";
-            //if($dao->isFavorite($wallpaper['id'], $user)){
-            //    echo "<form method=\"post\" action=\"favoritehandler.php\">
-            //    <input type=\"submit\" name=\"fav\" value=\"Favorite\">";
-            // }else{
-            //     echo "<form method=\"post\" action=\"favoritehandler.php\">
-            //     <input type=\"submit\" name=\"unfav\" value=\"Unfavorite\">";
-            // } 
+                </div>"; 
         }
         $rowCount+=1;
     }
