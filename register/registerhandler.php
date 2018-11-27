@@ -60,7 +60,6 @@
     //If all information entered was valid, create the user
     $dao->createUser($username, $email, $password);
     unset($_SESSION['presets']['email']);
-    unset($_SESSION['presets']['username']);
     header('Location: ../login');
     exit;
 
