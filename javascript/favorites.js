@@ -6,7 +6,7 @@ $(function() {
         $.ajax({
             url: $(this).attr('href'),
             success: function(response) {
-                console.log("wallpaper unfavorited successfully");
+                console.log("wallpaper unsaved successfully");
             }
         });
     });

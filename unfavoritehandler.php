@@ -5,7 +5,7 @@
     $wallpaper = $_GET['wallpaper'];
     $user = $_SESSION['user_id'];
     $dao->unfavorite($user, $wallpaper);
-    header("Location: ".$_SERVER['HTTP_REFERER']);
+    //header("Location: ".$_SERVER['HTTP_REFERER']);
     exit;
 
 ?>

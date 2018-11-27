@@ -17,7 +17,7 @@
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
-                                echo"<a class=\"favbutton\" href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unfavorite</a>
+                                echo"<a class=\"favbutton\" href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unsave</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class=\"title\">
                             <a href=\"". $wallpaper['reddit_link'] ."\" target=\"_blank\">". htmlentities(utf8_encode($wallpaper['title'])) ."</a>
                             <div class=\"fav\">";
-                                echo"<a class=\"favbutton\" href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unfavorite</a>
+                                echo"<a class=\"favbutton\" href='unfavoritehandler.php?wallpaper=".$wallpaper['wallpaper_id']."'/>Unsave</a>
                             </div>
                         </div>
                     </div>
