@@ -21,7 +21,7 @@ class Dao {
         $q->bindParam(":username", $user);
         $q->execute();
         $result = $q->fetch();
-        if($result["username"] === $user && $result["password"] === $pass){
+        if($result["username"] === $user && password_verify($pass, $result["password"])){
             return true;
         }
         return false;
@@ -59,7 +59,8 @@ class Dao {
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":email", $email);
         $q->bindParam(":username", $username);
-        $q->bindParam(":password", $password);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $q->bindParam(":password", $hashedPassword);
         $q->execute();
     }
 
@@ -76,17 +77,11 @@ class Dao {
         $result = $q->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
     //Gets a user's favorites
     public function getFavorites ($page, $user) {
         $conn = $this->getConnection();
         $first = $page*10 - 10;
-        // $saveQuery = 
-        //     "SELECT wallpaper.id, wallpaper.title, wallpaper.reddit_link, wallpaper.image_link, user.id, favorites.user_id, favorites.wallpaper_id
-        //      FROM wallpaper 
-        //      JOIN favorites on wallpaper.id = favorites.wallpaper_id
-        //      JOIN user on user.id = favorites.user_id 
-        //      WHERE user.username = :user
-        //      LIMIT ".$first.",".$this->limit;
         $saveQuery = 
             "SELECT wallpaper.id, wallpaper.title, wallpaper.reddit_link, wallpaper.image_link, favorites.user_id, favorites.wallpaper_id
              FROM wallpaper 
@@ -118,18 +113,6 @@ class Dao {
 
     //Checks if there are more favorites
     public function moreFavorites ($page, $user) {
-        // $conn = $this->getConnection();
-        // $start = ($page+1)*10 - 10;
-        // $result = $conn->query("select wallpaper.id, user.id, favorites.user_id, favorites.wallpaper_id 
-        //     from wallpaper 
-        //     join favorites on wallpaper.id = favorites.wallpaper_id
-        //     join user on user.id = favorites.user_id
-        //     where user.username = '".$user."' limit ".$start.",".$this->limit, PDO::FETCH_ASSOC);
-        // // echo '<script>console.log("morefave result: '.$result->fetchColumn().'")</script>';
-        // if($result->fetchColumn() > 0){
-        //     return true;
-        // }
-        // return false;
         $conn = $this->getConnection();
         $first = ($page+1)*10 - 10;
         $saveQuery = 
@@ -172,12 +155,6 @@ class Dao {
     //Checks if a wallpaper is a favorite of a user
     public function isFavorite ($wall, $user) {
         $conn = $this->getConnection();
-        // $result = $conn->query("select wallpaper.id, user.id, favorites.user_id, favorites.wallpaper_id 
-        //     from wallpaper 
-        //     join favorites on wallpaper.id = favorites.wallpaper_id
-        //     join user on user.id = favorites.user_id
-        //     where user.username = '".$user."' and favorites.wallpaper_id = ".$wall, PDO::FETCH_ASSOC);
-        $conn = $this->getConnection();
         $saveQuery = "SELECT user_id, wallpaper_id FROM favorites WHERE user_id=:user and wallpaper_id=:wall";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user", $user);
@@ -188,12 +165,6 @@ class Dao {
             return true;
         }
         return false;
-
-        // if($result->fetchColumn() > 0){
-        //     return true;
-        // }
-        // return false;
-    
     }
 
 }

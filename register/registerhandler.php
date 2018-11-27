@@ -51,12 +51,6 @@
         $valid = false;
     }
 
-    //Check if password is valid (TODO: Remove when hashing implemented)
-    if (!preg_match("/^[A-Za-z0-9_\-!@#$%^&*.]{6,64}$/",$password)){
-        array_push($_SESSION['message'] , "Password can only contain letters, numbers, or _.-!@#$%^&* and must be 6-64 characters.");
-        $valid = false;
-    }
-
     //if not valid, exit and notify user of errors
     if(!$valid){
         header('Location: .');
