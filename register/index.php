@@ -25,12 +25,18 @@
             ?>
 
             <form method="post" action="registerhandler.php">
-            <input type="text" name="username" placeholder="Username" maxlength="20" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>">
-            <input type="text" name="email" placeholder="Email" maxlength="256" value="<?php echo isset($_SESSION['presets']['email']) ? $_SESSION['presets']['email'] : ''; ?>">
-            <input type="password" name="password" placeholder="Password" maxlength="64">
-            <input type="password" name="passwordconfirm" placeholder="Confirm Password" maxlength="64">
-            <input type="submit" name="register" class="register_submit" value="Register">
-            <a href=".." class="register_submit" id="cancel">Cancel</a>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="user123" maxlength="20" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="user123@website.com" maxlength="256" value="<?php echo isset($_SESSION['presets']['email']) ? $_SESSION['presets']['email'] : ''; ?>">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" maxlength="64">
+            <label for="passwordconfirm">Confirm password:</label>
+            <input type="password" id="passwordconfirm" name="passwordconfirm" maxlength="64">
+            <div class="flexbox">
+                <a href=".." class="register_submit" id="cancel">Cancel</a>
+                <input type="submit" name="register" class="register_submit" value="Register">
+            </div>
             </form>
 
             <div class="register_help">

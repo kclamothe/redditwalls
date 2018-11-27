@@ -21,10 +21,15 @@
             <?php } ?>
 
             <form method="post" action="loginhandler.php">
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Username" maxlength="20" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>">
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Password" maxlength="64">
-            <input type="submit" name="login" class="login_submit" value="Login">
-            <a href=".." class="login_submit" id="cancel">Cancel</a>
+            
+            <div class="flexbox">
+                <a href=".." class="login_submit" id="cancel">Cancel</a>
+                <input type="submit" name="login" class="login_submit" value="Login">
+            </div>
             </form>
             
             <div class="login_help">

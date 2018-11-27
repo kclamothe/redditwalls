@@ -31,14 +31,12 @@ body {
 }
 
 .login_container input[type=submit], #cancel {
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-    position: relative;
+    /* /* display: inline-block; */
+    width: 50%; 
 }
 
 .login_container input[type=text], input[type=password] {
-    height: 44px;
+    height: 35px;
     font-size: 16px;
     width: 100%;
     margin-bottom: 10px;
@@ -75,25 +73,27 @@ body {
     border: 0px;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     background-color: #3d8bff;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-#cancel{
+#cancel {
     background-color: #ff241c;
+    margin-right:8px;
 }
 
-#cancel:hover{
+#cancel:hover {
     background-color: #fd352e;
 }
 
 .login_container a {
-    color:#ddd;
+    color: #ddd;
     font-weight: 400;
     text-align: center;
     display: inline-block;
 }
+
 .login_container a:hover {
-    color:#1975ff;
+    color: #1975ff;
 }
 
 .login_help {
@@ -101,27 +101,35 @@ body {
     font-size: 14px;
 }
 
-.login_btn {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.login_submit{
+.login_submit {
     -webkit-appearance: none;
 }
 
-.logo{
+.logo {
     z-index: 1000;
     width: 100%;
     padding-bottom: 20px;
 }
 
-.logo img{
+.logo img {
     display: block;
     margin: 0 auto;
 }
 
-#message{
+#message {
     margin-bottom: 8px;
     color: #fd352e;
+}
+
+.flexbox {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+label {
+    color: white;
+    margin-bottom: 4px;
+    display: inline-block;
 }
